@@ -1,0 +1,12 @@
+<div class="todo-item completed" [class.completed]="todo.completed">
+  <button class="checkbox icon" (click)="toggle()">
+    <i class="material-icons">{{ todo.completed ? 'check_box' : 'check_box_outline_blank'}}</i>
+  </button>
+  <span class="title">{{todo.name}}</span>
+
+  <div class="actions">
+    <button class="delete icon" (click)="onDelete()"  *ngIf="todo.completed">
+      <i class="material-icons">delete</i>
+    </button>
+  </div>
+</div>

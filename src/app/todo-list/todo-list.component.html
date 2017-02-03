@@ -1,0 +1,7 @@
+<section class="todo-list" *ngIf="todos.length > 0">
+  <my-todo-item
+    *ngFor="let todo of todos; let i = index"
+    [todo]="todo"
+    (deleteEv)="delete(i, $event)"
+  ></my-todo-item>
+</section>
