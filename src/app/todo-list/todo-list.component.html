@@ -2,6 +2,7 @@
   <my-todo-item
     *ngFor="let todo of todos; let i = index"
     [todo]="todo"
-    (deleteEv)="delete(i, $event)"
+    (deleteEv)="deleteEv($event)"
+    (toggle)="toggle($event)"
   ></my-todo-item>
 </section>

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Todo } from '../shared/todo';
-import { todos } from '../shared/data';
 
 @Component({
   selector: 'my-home',
@@ -8,15 +6,12 @@ import { todos } from '../shared/data';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  todos: Todo[] = todos;
-
   ngOnInit() {
 
   }
 
-  create(data: Todo) {
-    console.log(data);
-    this.todos.push(data);
+  logged(name) {
+    console.log('Todo item added ' + name);
   }
 
 }

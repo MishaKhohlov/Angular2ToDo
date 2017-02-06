@@ -2,20 +2,21 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Todo } from '../shared/todo';
 
 @Component({
-    selector: 'my-todo-item',
-    templateUrl: './todo-item.component.html',
-    styleUrls: ['./todo-item.component.scss']
+  selector: 'my-todo-item',
+  templateUrl: './todo-item.component.html',
+  styleUrls: ['./todo-item.component.scss']
 })
 export class TodoItemComponent {
-    @Input() todo: Todo;
-    @Output() deleteEv = new EventEmitter();
+  @Input() todo: Todo;
+  @Output() deleteEv = new EventEmitter();
+  @Output() toggle = new EventEmitter();
 
-    toggle() {
-        this.todo.completed = !this.todo.completed;
-    }
+  onToggle() {
+    this.toggle.emit(this.todo);
+  }
 
-    onDelete() {
-        this.deleteEv.emit('test');
-    }
+  onDelete() {
+    this.deleteEv.emit(this.todo);
+  }
 
 }
