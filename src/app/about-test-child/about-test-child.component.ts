@@ -1,25 +1,67 @@
-import { Component, Input, OnInit, OnDestroy, OnChanges } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  DoCheck,
+  OnDestroy,
+  OnChanges,
+  AfterContentInit,
+  AfterContentChecked,
+  AfterViewChecked,
+  AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'my-about-test-child',
   templateUrl: './about-test-child.component.html',
   styleUrls: ['./about-test-child.component.scss']
 })
-export class AboutTestChildComponent implements OnInit, OnDestroy, OnChanges {
+export class AboutTestChildComponent implements
+  OnInit,
+  OnInit,
+  DoCheck,
+  OnDestroy,
+  OnChanges,
+  AfterContentInit,
+  AfterContentChecked,
+  AfterViewChecked,
+  AfterViewInit {
+
   @Input() setAge: string;
   @Input() name: string;
   @Input() counter: string;
 
   constructor() {
-    this.log(`constructor`);
+    // this.log(`constructor`);
   }
 
   ngOnInit() {
+    // this.log('init');
     // load data from server
+  }
+
+  ngDoCheck() {
+    // this.log('DoCheck вызывается при каждой проверке изменений свойств компонента');
+  }
+
+  ngAfterContentInit() {
+    // this.log('AfterContentInit вызывается один раз после вставки содержимого в представление компонента кода');
+  }
+
+  ngAfterContentChecked() {
+    // this.log('AfterContentChecked вызывается при проверке изменений содержимого, которое добавляется в представление компонента');
+  }
+
+  ngAfterViewInit() {
+    // this.log('AfterViewInit вызывается после инициализации представления компонента, а также представлений дочерних компонентов. ');
+  }
+
+  ngAfterViewChecked() {
+    // this.log('AfterViewChecked вызывается после проверки на изменения в представлении компонента, проверки представлений дочерних к.');
   }
 
   ngOnDestroy() {
     // call before remove component
+    // this.log('ngOnDestroy вызывается перед тем, удалит компонент.');
   }
 
   ngOnChanges(changes) {

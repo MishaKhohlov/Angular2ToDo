@@ -1,4 +1,10 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  OnInit,
+  EventEmitter
+} from '@angular/core';
 
 @Component({
   selector: 'my-about-child',
@@ -29,6 +35,7 @@ export class AboutChildComponent implements OnInit {
 
   @Input() counter;
   @Output() counterChange = new EventEmitter();
+
   onCounterChange() {
     this.counter = ++this.counter;
     this.counterChange.emit(this.counter);
