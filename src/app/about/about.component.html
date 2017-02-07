@@ -1,3 +1,14 @@
-<p>
+<div>
   About Works!
-</p>
+  <input type="text" name="name-test-text" [(ngModel)]="inputName">
+  <input type="number" name="age-test-text" [(ngModel)]="inputAge">
+  <my-about-child [name]="inputName"
+                  [setAge]="inputAge"
+                  (onChange)="onChange($event)"
+                  [(counter)]="newCounter">!</my-about-child>
+  <p>Parent Two way binding {{newCounter}}</p>
+  <div>--------------------------------------------------------</div>
+  <my-about-test-child [name]="inputName"
+                       [setAge]="inputAge"
+                       [counter]="newCounter"></my-about-test-child>
+</div>

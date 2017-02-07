@@ -5,11 +5,17 @@ import { FormsModule } from '@angular/forms';
 
 // components
 import { AppComponent } from './app.component';
+
+// home page
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
 import { TodoFormComponent } from './todo-form/todo-form.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
+
+// about page
+import { AboutComponent } from './about/about.component';
+import { AboutChildComponent } from './about-child/about-child.component';
+import { AboutTestChildComponent } from './about-test-child/about-test-child.component';
 
 // services
 import { TodoServices } from './shared/todo.service/todo.service';
@@ -30,10 +36,12 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
   declarations: [ // class which have this module
     AppComponent,
     HomeComponent,
-    AboutComponent,
     TodoFormComponent,
     TodoListComponent,
-    TodoItemComponent
+    TodoItemComponent,
+    AboutComponent,
+    AboutChildComponent,
+    AboutTestChildComponent
   ],
   providers: [ // class which create services and use this module
     ApiService,
