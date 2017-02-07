@@ -15,7 +15,8 @@ export class TodoServices {
   }
 
   toogleTodo(todo: Todo) {
-    todo.completed = !todo.completed;
+    let index = this.todos.indexOf(todo);
+    this.todos[index].completed = !this.todos[index].completed;
   }
 
   deleteTodo(todo: Todo) {

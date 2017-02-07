@@ -47,7 +47,8 @@ module.exports = function makeWebpackConfig() {
   config.entry = isTest ? {} : {
     'polyfills': './src/polyfills.ts',
     'vendor': './src/vendor.ts',
-    'app': './src/main.ts' // our angular app
+    'app': './src/main.ts', // our angular app
+    'style': './src/style/app.scss'
   };
 
   /**
@@ -66,7 +67,7 @@ module.exports = function makeWebpackConfig() {
    */
   config.resolve = {
     // only discover files that have those extensions
-    extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html'],
+    extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html']
   };
 
   var atlOptions = '';
@@ -209,7 +210,8 @@ module.exports = function makeWebpackConfig() {
       // Extract css files
       // Reference: https://github.com/webpack/extract-text-webpack-plugin
       // Disabled when in test mode or not in build mode
-      new ExtractTextPlugin({filename: 'css/[name].[hash].css', disable: !isProd})
+      // disable: !isProd
+      new ExtractTextPlugin({filename: 'css/[name].[hash].css'})
     );
   }
 

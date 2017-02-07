@@ -21,13 +21,13 @@ import { routing } from './app.routing';
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 
 @NgModule({
-  imports: [
+  imports: [ // class which use this module
     BrowserModule,
     HttpModule,
     FormsModule,
     routing
   ],
-  declarations: [
+  declarations: [ // class which have this module
     AppComponent,
     HomeComponent,
     AboutComponent,
@@ -35,10 +35,11 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     TodoListComponent,
     TodoItemComponent
   ],
-  providers: [
+  providers: [ // class which create services and use this module
     ApiService,
     TodoServices
   ],
+  exports: [], // class which use in other modules
   bootstrap: [AppComponent]
 })
 export class AppModule {
