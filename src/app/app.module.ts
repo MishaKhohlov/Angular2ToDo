@@ -19,6 +19,8 @@ import { AboutTestChildComponent } from './about-test-child/about-test-child.com
 
 // services
 import { TodoServices } from './shared/todo.service/todo.service';
+import { BoldDirective } from './bold-directive/bold.directive';
+import { StructureDirective } from './structure-directive/structure.directive';
 
 // shared and routing
 import { ApiService } from './shared';
@@ -35,6 +37,8 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
   ],
   declarations: [ // class which have this module
     AppComponent,
+    BoldDirective,
+    StructureDirective,
     HomeComponent,
     TodoFormComponent,
     TodoListComponent,

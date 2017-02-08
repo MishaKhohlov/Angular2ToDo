@@ -15,6 +15,10 @@
   <button (click)="increment()">+</button>
   <button (click)="decrement()">-</button>
   <div>--------------------------------------------------------</div>
-  <p #templateVar>Toom</p>
+  <p #templateVar myBold [selectSize]="'178px'" [defaultSize]="'156px'">Toom</p>
   <button (click)="change()">Change Tom</button>
+  <div>--------------------------------------------------------</div>
+  <div>Structure directive</div>
+  <div *myWhile="condition">Show elem when directive have not errors</div>
+  <button (click)="conditionChange()">Turn on/of</button>
 </div>

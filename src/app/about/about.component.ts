@@ -17,6 +17,7 @@ export class AboutComponent implements OnInit {
   inputName = 'Tom';
   inputAge = 1;
   newCounter = 2;
+  condition = false;
 
   constructor() {
     // Do stuff
@@ -40,6 +41,10 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
     console.log('Hello About');
+  }
+
+  conditionChange() {
+    this.condition = !this.condition;
   }
 
 }
