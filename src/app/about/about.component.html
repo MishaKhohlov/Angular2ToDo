@@ -2,6 +2,7 @@
   About Works!
   <input type="text" name="name-test-text" [(ngModel)]="inputName">
   <input type="number" name="age-test-text" [(ngModel)]="inputAge">
+  <div>--------------------------------------------------------</div>
   <my-about-child [name]="inputName"
                   [setAge]="inputAge"
                   (onChange)="onChange($event)"
@@ -13,4 +14,7 @@
                        [counter]="newCounter"></my-about-test-child>
   <button (click)="increment()">+</button>
   <button (click)="decrement()">-</button>
+  <div>--------------------------------------------------------</div>
+  <p #templateVar>Toom</p>
+  <button (click)="change()">Change Tom</button>
 </div>

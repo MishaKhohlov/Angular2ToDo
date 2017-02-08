@@ -10,6 +10,10 @@ export class AboutComponent implements OnInit {
   @ViewChild(AboutTestChildComponent)
   private counterComponent: AboutTestChildComponent;
 
+  // @ContentChild get variable which transfer with code from ng-content,
+  @ViewChild('templateVar')
+  nameParagraph: any;
+
   inputName = 'Tom';
   inputAge = 1;
   newCounter = 2;
@@ -24,6 +28,10 @@ export class AboutComponent implements OnInit {
 
   decrement() {
     this.counterComponent.counterChild--;
+  }
+
+  change() {
+    this.nameParagraph.nativeElement.textContent = 'Hello Tom';
   }
 
   onChange(val) {
