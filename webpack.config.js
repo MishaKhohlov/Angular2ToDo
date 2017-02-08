@@ -20,7 +20,7 @@ var isProd = ENV === 'build';
 
 console.log(isTestWatch, 'watch');
 console.log(isTest, 'test');
-console.log(isProd, 'prod');
+console.log(isProd, 'build(prod)');
 
 module.exports = function makeWebpackConfig() {
   /**

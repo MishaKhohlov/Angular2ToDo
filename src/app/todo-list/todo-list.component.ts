@@ -10,10 +10,8 @@ import { TodoServices } from '../shared/todo.service/todo.service';
 })
 export class TodoListComponent implements OnInit {
   todos: Todo[];
-  todoService: TodoServices;
 
-  constructor(todoService: TodoServices) {
-    this.todoService = todoService;
+  constructor(private todoService: TodoServices) {
     this.todos = [];
   }
 
