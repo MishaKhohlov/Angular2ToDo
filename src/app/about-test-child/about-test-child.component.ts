@@ -30,6 +30,8 @@ export class AboutTestChildComponent implements
   @Input() name: string;
   @Input() counter: string;
 
+  counterChild = 0;
+
   constructor() {
     // this.log(`constructor`);
   }
@@ -78,7 +80,8 @@ export class AboutTestChildComponent implements
   }
 
   log(msg: string) {
-    console.log(msg);
+    return msg;
+    // console.log(msg);
   }
 }
 
