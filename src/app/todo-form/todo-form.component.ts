@@ -9,12 +9,10 @@ import { TodoServices } from '../shared/todo.service/todo.service';
 })
 export class TodoFormComponent {
   title = '';
-  todoService: TodoServices;
 
   @Output() log = new EventEmitter();
 
-  constructor(todoService: TodoServices) {
-    this.todoService = todoService;
+  constructor(private todoService: TodoServices) {
   }
 
   onSubmit() {
