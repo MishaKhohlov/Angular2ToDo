@@ -1,0 +1,57 @@
+<div class="col-xs-8">
+  <div class="form-group">
+    <label>Название модели</label>
+    <input class="form-control"
+           name="name"
+           [(ngModel)]="user.title"
+           #name="ngModel" required/>
+    <div [hidden]="name.valid || name.untouched" class="alert alert-danger">
+      Не указано имя
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}"
+           type="email"
+           name="email"
+           class="form-control"
+           [(ngModel)]="user.email"
+           #email="ngModel"
+           />
+    <div [hidden]="email.valid || email.untouched" class="alert alert-danger">
+      Некорректный email
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Производитель</label>
+    <select class="form-control" name="model" [(ngModel)]="user.company" #model="ngModel" required>
+      <option *ngFor="let comp of companies" [value]="comp">
+        {{comp}}
+      </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Телефон</label>
+    <input class="form-control" name="phone" [(ngModel)]="user.phone" #phone="ngModel"
+           required pattern="[0-9]{10}"/>
+    <div [hidden]="phone.valid || phone.untouched" class="alert alert-danger">
+      Некорректный телефон
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-default"
+            (click)="addPhone([name, email, model, phone])"
+            [disabled]="name.invalid || email.invalid || model.invalid || phone.invalid">Добавить</button>
+  </div>
+</div>
+<div><h3>Добавленные элементы</h3>
+  <ul *ngFor="let p of phones">
+    <li *ngIf="p.title">{{p.title}} ({{p.company}}) - {{p.email}} - {{p.phone}}</li>
+  </ul>
+</div>
+<div>
+  <p>{{name.name}} : {{name.model}}</p>
+  <p>{{email.name}} : {{email.model}}</p>
+  <p>{{model.name}} : {{model.model}}</p>
+  <p>{{phone.name}} : {{phone.model}}</p>
+</div>
