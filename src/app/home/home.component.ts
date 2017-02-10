@@ -6,6 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  todoShow = false;
+  myFormOpen = false;
+
+  todoOpen() {
+    this.todoShow = !this.todoShow;
+  }
+
+  formOpen() {
+    this.myFormOpen = !this.myFormOpen;
+  }
+
   ngOnInit() {
 
   }

@@ -211,7 +211,7 @@ module.exports = function makeWebpackConfig() {
       // Reference: https://github.com/webpack/extract-text-webpack-plugin
       // Disabled when in test mode or not in build mode
       // disable: !isProd
-      new ExtractTextPlugin({filename: 'css/[name].[hash].css'})
+      new ExtractTextPlugin({filename: 'css/[name].[hash].css', disable: !isProd})
     );
   }
 

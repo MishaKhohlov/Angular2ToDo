@@ -1,11 +1,16 @@
+import { Injectable } from '@angular/core';
 import { todos } from '../data';
 import { Todo } from '../todo';
+import { LogService } from '../log.service';
 
-
+@Injectable()
 export class TodoServices {
   todos: Todo[] = todos;
 
+  constructor(private LogService: LogService) {}
+
   getTodos(): Todo[] {
+    this.LogService.write('Data get', false);
     return this.todos;
   }
 

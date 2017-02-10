@@ -1,0 +1,16 @@
+.form-group {
+  margin-top: 20px;
+}
+.ng-touched.ng-dirty {
+  border-radius: 6px;
+}
+.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+form.ng-invalid {
+  border: 1px solid rgba(255, 0, 0, 0.2);
+}
+.ng-touched.ng-valid {
+  border: 1px solid green
+}
+

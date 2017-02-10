@@ -1,4 +1,12 @@
 <main>
-  <my-todo-form (log)="logged($event)"></my-todo-form>
-  <my-todo-list></my-todo-list>
+  <button (click)="todoOpen()">1) open Todo</button>
+  <div *ngIf="todoShow">
+    <my-todo-form (log)="logged($event)"></my-todo-form>
+    <my-todo-list></my-todo-list>
+  </div>
+
+  <button (click)="formOpen()">2) open From</button>
+  <my-form *ngIf="myFormOpen"></my-form>
+
+  <my-form-ng></my-form-ng>
 </main>
