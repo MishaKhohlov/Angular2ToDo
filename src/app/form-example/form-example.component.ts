@@ -34,7 +34,7 @@ export class FormComponent {
     this.phones.push(newObj);
     elem.forEach(item => item.reset());
     this.user = new User();
-    console.log(this.phones);
+
   }
 
 }
