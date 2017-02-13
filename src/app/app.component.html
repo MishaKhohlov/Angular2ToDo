@@ -9,6 +9,9 @@
     <a [routerLink]="['test-route']"
        routerLinkActive="active"
        [routerLinkActiveOptions]="{exact:true}">testRoute</a>
+    <a [routerLink]="['/test-route', '15']"
+       routerLinkActive="active"
+       [routerLinkActiveOptions]="{exact:true}">testRoute with params(15)</a>
   </nav>
 </header>
 <main>

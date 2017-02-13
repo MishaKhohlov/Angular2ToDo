@@ -1,1 +1,18 @@
-<h2>Hello, I am test route</h2>
+<h2>Hello, I am test route. <span *ngIf="id">ID{{id}}</span></h2>
+
+<div *ngIf="product || price">
+  <h4>Params</h4>
+
+  <div *ngIf="product">Product: {{product}}</div>
+  <div *ngIf="price">Price: {{price}}</div>
+</div>
+
+<button (click)="openLinkProps = !openLinkProps">Show/close</button>
+<div *ngIf="openLinkProps">
+  <a [routerLink]="['/test-route', '5']"
+     [queryParams]="{'product':'tablet'}">params 5, props Product</a>
+  <a [routerLink]="['/test-route', '10']"
+     [queryParams]="{'product':'phone', 'price': 200}">params 10, props product, price</a>
+  <a [routerLink]="['/test-route', '15']"
+     [queryParams]="{'product':'tablet'}">params 15, props product</a>
+</div>
