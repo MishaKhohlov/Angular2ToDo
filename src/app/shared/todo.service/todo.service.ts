@@ -2,12 +2,24 @@ import { Injectable } from '@angular/core';
 import { todos } from '../data';
 import { Todo } from '../todo';
 import { LogService } from '../log.service';
+import { Http, Response } from '@angular/http';
 
 @Injectable()
 export class TodoServices {
   todos: Todo[] = todos;
 
-  constructor(private LogService: LogService) {}
+  constructor(private LogService: LogService, private http: Http) {
+  }
+
+  getUsers() {
+    this.http.get('http://echo.jsontest.com/key/value/one/two')
+      .map(data => data.json())
+      .subscribe((people: Response) => {
+        console.log(people);
+      }, (error: any) => {
+        console.log('Error response', error);
+      });
+  }
 
   getTodos(): Todo[] {
     this.LogService.write('Data get', false);

@@ -22,10 +22,10 @@
 <div>Имя: {{myForm.value.name}}</div>
 <div>Email: {{myForm.value.email}}</div>-->
 <div>-----------------------------------------------------------------------------</div>
-<form [formGroup]="myForm" (ngSubmit)="onSubmit2()" novalidate name="Form2">
+<form [formGroup]="myForm" novalidate name="Form2">
   <div class="form-group">
     <label>Имя</label>
-    <input class="form-control" name="name" formControlName="userName" />
+    <input class="form-control" name="name" formControlName="userName"/>
 
     <div class="alert alert-danger"
          *ngIf="myForm.controls['userName'].invalid && myForm.controls['userName'].touched">
@@ -34,7 +34,7 @@
   </div>
   <div class="form-group">
     <label>Email</label>
-    <input class="form-control" name="email" formControlName="userEmail" />
+    <input class="form-control" name="email" formControlName="userEmail"/>
 
     <div class="alert alert-danger"
          *ngIf="myForm.controls['userEmail'].invalid && myForm.controls['userEmail'].touched">
@@ -43,7 +43,7 @@
   </div>
   <div class="form-group">
     <label>Телефон</label>
-    <input class="form-control" name="phone" formControlName="userPhone" />
+    <input class="form-control" name="phone" formControlName="userPhone"/>
 
     <div class="alert alert-danger"
          *ngIf="myForm.controls['userPhone'].invalid && myForm.controls['userPhone'].touched">
@@ -53,14 +53,17 @@
   <div formArrayName="phones">
     <div class="form-group" *ngFor="let phone of myForm.controls['phones'].controls; let i = index">
       <label>Телефон</label>
-      <input class="form-control" formControlName="{{i}}" />
+      <input class="form-control" formControlName="{{i}}"/>
     </div>
   </div>
   <div class="form-group">
     <button class="btn btn-default" (click)="addPhone()">
       Добавить телефон
     </button>
-    <button class="btn btn-default" [disabled]="myForm.invalid">
+    <button type="submit"
+            class="btn btn-default"
+            [disabled]="myForm.invalid"
+            (click)="onSubmit2()">
       Отправить
     </button>
   </div>

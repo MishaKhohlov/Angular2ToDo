@@ -67,7 +67,8 @@ export class AppModule {
   }
 
   hmrOnInit(store) {
-    console.log('HMR store', store);
+    return store;
+    // console.log('HMR store', store);
   }
 
   hmrOnDestroy(store) {
