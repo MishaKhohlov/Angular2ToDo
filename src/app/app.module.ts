@@ -20,6 +20,10 @@ import { AboutComponent } from './about/about.component';
 import { AboutChildComponent } from './about-child/about-child.component';
 import { AboutTestChildComponent } from './about-test-child/about-test-child.component';
 
+// test page
+import { TestRouteComponent } from './test-route/test-route.component';
+import { NotFoundComponent } from './not-found/notFound.component';
+
 // services
 import { TodoServices } from './shared/todo.service/todo.service';
 import { BoldDirective } from './bold-directive/bold.directive';
@@ -52,7 +56,9 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     FormNgComponent,
     AboutComponent,
     AboutChildComponent,
-    AboutTestChildComponent
+    AboutTestChildComponent,
+    TestRouteComponent,
+    NotFoundComponent
   ],
   providers: [ // class which create services and use this module
     ApiService,
